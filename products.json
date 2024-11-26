@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Minecraft PS4",
+    "price": 20,
+    "id": 1
+  },
+  {
+    "name": "PS4 Pro",
+    "price": 300,
+    "id": 3
+  },
+  {
+    "name": "No Man Sky PS4",
+    "price": 40,
+    "id": 4
+  },
+  {
+    "name": "Fifa 25 PS4",
+    "price": 50,
+    "id": 5
+  },
+  {
+    "name": "PS5 Slim",
+    "price": 400,
+    "id": 6
+  }
+]
