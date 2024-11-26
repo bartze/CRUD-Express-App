@@ -1,7 +1,7 @@
 import express from 'express';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Datos en memoria para la versión demo
 let products = [];
@@ -46,7 +46,10 @@ app.delete('/products/:id', (req, res) => {
   res.json(deletedProduct);
 });
 
-// Nueva ruta para obtener un producto por su ID
+app.get('/products', (req, res) => {
+  res.json(products);
+});
+
 app.get('/products/:id', (req, res) => {
   const product = products.find(p => p.id === +req.params.id);
   if (product) {
@@ -56,11 +59,6 @@ app.get('/products/:id', (req, res) => {
   }
 });
 
-app.get('/products', (req, res) => {
-  res.json(products);
-});
-
 app.listen(port, () => 
   console.log(`Demo app listening at http://localhost:${port}`)
 );
-
