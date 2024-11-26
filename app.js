@@ -46,6 +46,16 @@ app.delete('/products/:id', (req, res) => {
   res.json(deletedProduct);
 });
 
+// Nueva ruta para obtener un producto por su ID
+app.get('/products/:id', (req, res) => {
+  const product = products.find(p => p.id === +req.params.id);
+  if (product) {
+    res.json(product);
+  } else {
+    res.status(404).send('Product not found');
+  }
+});
+
 app.get('/products', (req, res) => {
   res.json(products);
 });
